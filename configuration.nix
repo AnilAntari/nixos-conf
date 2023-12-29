@@ -86,6 +86,8 @@
     firefox
     neofetch
     telegram-desktop 
+    git
+    keepassxc
     # sway
     brightnessctl
     alacritty
