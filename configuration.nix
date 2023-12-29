@@ -42,7 +42,7 @@
     #(nerdfonts.override {  fonts = [ "FiraCode" ]; })
     font-awesome_5
   ];
-
+   
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -83,16 +83,23 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    firefox
+    neofetch
+    telegram-desktop 
+    # sway
+    brightnessctl
     alacritty
     mako
     grim
     slurp
-    firefox
     waybar
+    swaybg
+    swayidle
+    swaylock-effects
     wofi
-    neofetch
+    pavucontrol
     wlogout
-    telegram-desktop
+ 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
