@@ -26,8 +26,8 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  #networking.interfaces.enp2s0.useDHCP = true;
-  #networking.interfaces.wlp3s0.useDHCP = true;
+  networking.interfaces.enp2s0.useDHCP = true;
+  networking.interfaces.wlp3s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,7 +45,14 @@
   virtualisation.libvirtd.enable = true;
   users.extraUsers.igor.extraGroups = [ "libvirtd" ];
   networking.firewall.checkReversePath = false;  
-   
+  
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.windowManager.i3.enable = true; 
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+  
 
   # Шрифты
   fonts.fonts = with pkgs; [
@@ -87,6 +94,32 @@
    environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
+     firefox
+     git
+     i3-gaps
+     polybarFull
+     termite
+     feh
+     rofi
+     picom
+     keepassxc
+     flameshot
+     mc
+     pfetch
+     neofetch
+     veracrypt
+     qemu
+     virt-manager
+     pciutils
+     htop
+     tmux
+     qbittorrent
+     steam
+     gparted
+     cmus
+     pigz
+     tdesktop
+     siji
    ];
  
   programs.steam.enable = true;     
