@@ -35,9 +35,12 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-  programs.sway.enable = true;
-  
+  programs.fish.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  programs.sway = {
+      enable = true;    
+  };
+   
   fonts.packages = with pkgs; [
     #(nerdfonts.override {  fonts = [ "FiraCode" ]; })
     font-awesome_5
@@ -67,6 +70,7 @@
   users.users.igor = {
    isNormalUser = true;
    extraGroups = [ "libvirtd" "wheel" ]; # Enable  for the user.
+   shell = pkgs.fish;
   };	
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.alice = {
@@ -101,7 +105,7 @@
     wofi
     pavucontrol
     xwayland
- 
+    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
