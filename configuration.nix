@@ -141,6 +141,10 @@
     keepassxc 
     neovim
     lshw
+    thunderbird
+    htop
+    ncdu
+    qbittorrent
     # sway
     brightnessctl
     alacritty
