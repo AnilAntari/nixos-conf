@@ -100,6 +100,7 @@
     swaylock-effects
     wofi
     pavucontrol
+    xwayland
  
   ];
 
