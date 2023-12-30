@@ -39,7 +39,7 @@
   programs.sway = {
       enable = true;    
   };
-   
+  
   fonts.packages = with pkgs; [
     #(nerdfonts.override {  fonts = [ "FiraCode" ]; })
     font-awesome_5
@@ -117,7 +117,9 @@
    isNormalUser = true;
    extraGroups = [ "libvirtd" "wheel" ]; # Enable  for the user.
    shell = pkgs.fish;
-  };	
+  };
+ 
+  services.udisks2.enable = true;	
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.alice = {
   #   isNormalUser = true;
@@ -128,6 +130,9 @@
   #   ];
   # };
 
+  nixpkgs.config.permittedInsecurePackages = [
+      "electron-25.9.0"
+  ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
@@ -146,6 +151,7 @@
     ncdu
     qbittorrent
     libreoffice-still
+    obsidian
     # sway
     brightnessctl
     alacritty
