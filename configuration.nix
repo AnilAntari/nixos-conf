@@ -118,7 +118,11 @@
    extraGroups = [ "libvirtd" "wheel" ]; # Enable  for the user.
    shell = pkgs.fish;
   };
- 
+  
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  
+
   services.udisks2 = {
     enable = true;
     mountOnMedia = true;
