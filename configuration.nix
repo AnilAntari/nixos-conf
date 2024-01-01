@@ -158,7 +158,6 @@
     telegram-desktop
     git
     keepassxc 
-    neovim
     lshw
     thunderbird
     htop
@@ -168,7 +167,8 @@
     obsidian
     gparted
     tor-browser
-    edk2
+    helix
+     
     # sway
     brightnessctl
     alacritty
