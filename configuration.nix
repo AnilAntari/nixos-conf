@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+#? Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
@@ -19,7 +19,7 @@
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
-
+  boot.kernelPackages = pkgs.linuxPackages_latest; 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -174,7 +174,8 @@
     vlc
     ntfs3g
     blueman
-     
+    libsForQt5.okular
+         
     # sway
     brightnessctl
     alacritty
@@ -231,7 +232,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11-small"; # Did you read the comment?
 
 }
 
