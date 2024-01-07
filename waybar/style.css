@@ -104,12 +104,12 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #717B86;
+    background-color: #fa889f;
 }
 
 
 #battery {
-    background-color: #717B86;
+    background-color: #fa889f;
     color: #333333;
 }
 
@@ -149,11 +149,11 @@ label:focus {
 }
 
 #backlight {
-    background-color: #717B86;
+    background-color: #fa889f;
 }
 
 #network {
-    background-color: #717B86;
+    background-color: #fa889f;
 }
 
 #network.disconnected {
@@ -161,12 +161,12 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #717B86;
+    background-color: #fa889f;
     color: #333333;
 }
 
 #pulseaudio.muted {
-    background-color: #717B86;
+    background-color: #fa889f;
     color: #333333;
 }
 
@@ -193,7 +193,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #717B86;
+    background-color: #fa889f;
 }
 
 #idle_inhibitor {
@@ -223,7 +223,7 @@ label:focus {
 }
 
 #language {
-    background: #717B86;
+    background: #fa889f;
     color: #333333;
     padding: 0 5px;
     margin: 6px 3px;

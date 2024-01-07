@@ -23,7 +23,7 @@ set $menu dmenu_path | wofi --show drun -I | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/igor/Изображения/Wallpaper/forest_trees_spruces_1116772_1920x1080.jpg fill
+output * bg /home/igor/Изображения/Wallpaper/john-fowler-aaIN3y2zcMQ-unsplash.jpg fill
 #
 # Example configuration:
 #
@@ -220,7 +220,7 @@ bar {
 }
 
 
-default_border pixel
+default_border none
 
 input * {
     xkb_layout us,ru
