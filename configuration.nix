@@ -52,7 +52,7 @@
     #(nerdfonts.override {  fonts = [ "FiraCode" ]; })
     font-awesome_5
   ];
-  
+ 
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
@@ -175,6 +175,8 @@
     blueman
     libsForQt5.okular
     gimp
+    shellcheck
+    chromium
         
     # sway
     brightnessctl
@@ -189,7 +191,7 @@
     wofi
     pavucontrol
     xwayland
-
+    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -232,7 +234,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "23.11-small"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
 
