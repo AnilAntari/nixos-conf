@@ -18,7 +18,7 @@
   boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
+  #boot.loader.grub.useOSProber = true;
   boot.kernelPackages = pkgs.linuxPackages_latest; 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -130,7 +130,14 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   services.greetd.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver = {    
+    enable = true;
+    desktopManager = {
+      xfce.enable = true;
+    };
+    displayManager.defaultSession = "xfce";
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -160,6 +167,7 @@
   ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  nix.package = pkgs.nixStable; 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
