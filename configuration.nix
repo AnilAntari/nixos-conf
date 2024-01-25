@@ -123,14 +123,24 @@
   # services.xserver.libinput.enable = true;
   users.users.igor = {
    isNormalUser = true;
-   extraGroups = [ "libvirtd" "wheel" ]; # Enable  for the user.
+   extraGroups = [ "libvirtd" "wheel" "docker" ]; # Enable  for the user.
    shell = pkgs.fish;
   };
   
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  
-
+  services.greetd.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-run"
+  ];
   services.udisks2 = {
     enable = true;
     mountOnMedia = true;
